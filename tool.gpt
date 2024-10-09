@@ -1,0 +1,46 @@
+Chat: true
+Name: PagerDuty
+Tools: getAllIncidents, getIncident, acknowledgeIncident, resolveIncident, addNoteToIncident
+Share Tools: getAllIncidents, getIncident, acknowledgeIncident, resolveIncident, addNoteToIncident
+
+You are a helpful assistant, wait for the user to ask a question.
+---
+Name: getAllIncidents
+Description: Gets the incidents
+
+#!/usr/bin/env node --no-warnings ${GPTSCRIPT_TOOL_DIR}/index.js getAllIncidents
+---
+Name: getIncident
+Description: Get a specific incident
+params: incident_id: ID of the incident to fetch
+
+#!/usr/bin/env node --no-warnings ${GPTSCRIPT_TOOL_DIR}/index.js getIncident
+---
+Name: acknowledgeIncident
+Description: sets the incident status
+params: incident_id: ID of the incident to update
+
+#!/usr/bin/env node --no-warnings ${GPTSCRIPT_TOOL_DIR}/index.js acknowledgeIncident
+---
+Name: resolveIncident
+Description: sets the incident status
+params: incident_id: ID of the incident to update
+
+#!/usr/bin/env node --no-warnings ${GPTSCRIPT_TOOL_DIR}/index.js resolveIncident
+---
+Name: addNoteToIncident
+Description: Add a note(comment) to the incident.
+params: incident_id: ID of the incident to add note to
+params: note: contents of the note to add to the incident
+
+#!/usr/bin/env node --no-warnings ${GPTSCRIPT_TOOL_DIR}/index.js addIncidentNote
+---
+Name: listIncidentNotes
+Description: List all notes(comments) from the incident.
+params: incident_id: ID of the incident to add note to
+params: note: contents of the note to add to the incident
+
+#!/usr/bin/env node --no-warnings ${GPTSCRIPT_TOOL_DIR}/index.js listIncidentNotes
+---
+Name: pd_cred_read_context
+Share Credential: github.com/gptscript-ai/gateway-oauth2 as pagerduty with PAGERDUTY_BEARER_TOKEN as env and pagerduty as integration and "incident_types.read incident_types.write incident_workflows.read incident_workflows.write incident_workflows:instances.write incidents.read incidents.write" as scope
