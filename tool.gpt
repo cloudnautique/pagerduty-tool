@@ -1,7 +1,6 @@
-Chat: true
 Name: PagerDuty
-Tools: getAllIncidents, getIncident, acknowledgeIncident, resolveIncident, addNoteToIncident
-Share Tools: getAllIncidents, getIncident, acknowledgeIncident, resolveIncident, addNoteToIncident
+Tools: getAllIncidents, getIncident, acknowledgeIncident, resolveIncident, addNoteToIncident, listIncidentNotes
+Share Tools: getAllIncidents, getIncident, acknowledgeIncident, resolveIncident, addNoteToIncident, listIncidentNotes
 
 You are a helpful assistant, wait for the user to ask a question.
 ---
