@@ -1,6 +1,6 @@
 const { api } = require('@pagerduty/pdjs');
 const {
-    getAllIncidents,
+    listIncidents,
     getIncident,
     updateIncidentStatus,
     addIncidentNote,
@@ -32,7 +32,7 @@ async function main() {
         let incidentId = "";
         switch (command) {
             case "listIncidents":
-                const things = await getAllIncidents(pd);
+                const things = await listIncidents(pd);
                 console.log("INCIDENTS: ", things);
                 break
             case "getIncident":

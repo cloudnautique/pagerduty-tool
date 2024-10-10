@@ -2,7 +2,7 @@
 function getEmail() {
     return process.env.USER_EMAIL;
 }
-async function getAllIncidents(client) {
+async function listIncidents(client) {
     try {
         const resp = await client.get('/incidents');
         return resp.resource;
@@ -75,7 +75,7 @@ async function addIncidentNote(client, id, contents) {
 }
 
 module.exports = {
-    getAllIncidents,
+    listIncidents,
     getIncident,
     updateIncidentStatus,
     addIncidentNote,

@@ -1,6 +1,6 @@
 Name: PagerDuty
-Tools: getAllIncidents, getIncident, acknowledgeIncident, resolveIncident, addNoteToIncident, listIncidentNotes
-Share Tools: getAllIncidents, getIncident, acknowledgeIncident, resolveIncident, addNoteToIncident, listIncidentNotes
+Tools: listIncidents, getIncident, acknowledgeIncident, resolveIncident, addNoteToIncident, listIncidentNotes
+Share Tools: listIncidents, getIncident, acknowledgeIncident, resolveIncident, addNoteToIncident, listIncidentNotes
 
 You are a helpful assistant, wait for the user to ask a question.
 ---
