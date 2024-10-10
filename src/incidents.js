@@ -1,4 +1,7 @@
 
+function getEmail() {
+    return process.env.USER_EMAIL;
+}
 async function getAllIncidents(client) {
     try {
         const resp = await client.get('/incidents');
@@ -26,7 +29,7 @@ async function updateIncidentStatus(client, id, status) {
         const resp = await client.put(`/incidents/${orig.incident.id}`, {
             headers: {
                 Accept: 'application/vnd.pagerduty+json;version=2',
-                From: '',
+                From: getEmail(),
             },
             data: {
                 incident: {
@@ -56,7 +59,7 @@ async function addIncidentNote(client, id, contents) {
     try {
         const resp = await client.post(`/incidents/${id}/notes`, {
             headers: {
-                From: '',
+                From: getEmail(),
             },
             data: {
                 note: {
@@ -75,5 +78,6 @@ module.exports = {
     getAllIncidents,
     getIncident,
     updateIncidentStatus,
-    addIncidentNote
+    addIncidentNote,
+    listIncidentNotes
 }

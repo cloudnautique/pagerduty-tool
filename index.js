@@ -1,5 +1,11 @@
 const { api } = require('@pagerduty/pdjs');
-const { getAllIncidents, getIncident, updateIncidentStatus, addIncidentNote } = require('./src/incidents.js');
+const {
+    getAllIncidents,
+    getIncident,
+    updateIncidentStatus,
+    addIncidentNote,
+    listIncidentNotes
+} = require('./src/incidents.js');
 
 if (process.argv.length !== 3) {
     console.error('Usage: node index.js <command>')

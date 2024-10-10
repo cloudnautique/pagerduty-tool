@@ -18,12 +18,14 @@ params: incident_id: ID of the incident to fetch
 Name: acknowledgeIncident
 Description: sets the incident status
 params: incident_id: ID of the incident to update
+params: user_email: email address of the pagerduty user
 
 #!/usr/bin/env node --no-warnings ${GPTSCRIPT_TOOL_DIR}/index.js acknowledgeIncident
 ---
 Name: resolveIncident
 Description: sets the incident status
 params: incident_id: ID of the incident to update
+params: user_email: email address of the pagerduty user
 
 #!/usr/bin/env node --no-warnings ${GPTSCRIPT_TOOL_DIR}/index.js resolveIncident
 ---
@@ -31,6 +33,7 @@ Name: addNoteToIncident
 Description: Add a note(comment) to the incident.
 params: incident_id: ID of the incident to add note to
 params: note: contents of the note to add to the incident
+params: user_email: email address of the pagerduty user
 
 #!/usr/bin/env node --no-warnings ${GPTSCRIPT_TOOL_DIR}/index.js addIncidentNote
 ---
