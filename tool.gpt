@@ -4,10 +4,10 @@ Share Tools: getAllIncidents, getIncident, acknowledgeIncident, resolveIncident,
 
 You are a helpful assistant, wait for the user to ask a question.
 ---
-Name: getAllIncidents
+Name: listIncidents
 Description: Gets the incidents
 
-#!/usr/bin/env node --no-warnings ${GPTSCRIPT_TOOL_DIR}/index.js getAllIncidents
+#!/usr/bin/env node --no-warnings ${GPTSCRIPT_TOOL_DIR}/index.js listIncidents
 ---
 Name: getIncident
 Description: Get a specific incident

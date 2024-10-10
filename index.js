@@ -25,7 +25,7 @@ async function main() {
     try {
         let incidentId = "";
         switch (command) {
-            case "getAllIncidents":
+            case "listIncidents":
                 const things = await getAllIncidents(pd);
                 console.log("INCIDENTS: ", things);
                 break
