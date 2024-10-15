@@ -4,7 +4,8 @@ const {
     getIncident,
     updateIncidentStatus,
     addIncidentNote,
-    listIncidentNotes
+    listIncidentNotes,
+    listIncidentAlerts
 } = require('./src/incidents.js');
 
 if (process.argv.length !== 3) {
@@ -68,6 +69,11 @@ async function main() {
                 incidentId = getIncidentId();
                 const noteList = await listIncidentNotes(pd, incidentId);
                 console.log("NOTES: ", noteList);
+            case "listIncidentAlerts":
+                incidentId = getIncidentId();
+                const alerts = await listIncidentAlerts(pd, incidentId);
+                console.log(JSON.stringify(alerts.alerts));
+                break
             default:
                 console.log(`Unknown command: ${command}`)
                 process.exit(1)

@@ -74,10 +74,21 @@ async function addIncidentNote(client, id, contents) {
     }
 }
 
+async function listIncidentAlerts(client, id) {
+    try {
+        const resp = await client.get(`/incidents/${id}/alerts`);
+        return resp.data;
+    } catch (error) {
+        console.error(error);
+        throw error;
+    }
+}
+
 module.exports = {
     listIncidents,
     getIncident,
     updateIncidentStatus,
     addIncidentNote,
-    listIncidentNotes
+    listIncidentNotes,
+    listIncidentAlerts
 }
